@@ -1,0 +1,38 @@
+﻿@model Pets.Models.Pet
+
+<h2>NewDate</h2>
+<hr />
+
+<form action="@Url.Action("NewDate","Pets")" method="post">
+
+    <div class="form-group col-3">
+        <labe>ID</labe>
+        @Html.TextBoxFor(X => X.ID, new{ @class="form-control", @required="required" })
+    </div>
+
+    <div class="form-group col-3">
+        <labe>Name</labe>
+            @Html.TextBoxFor(X => X.Names, new{ @class="form-control", @required="required" })
+     </div>
+
+    <div class="form-group col-3">
+        <labe>Raza</labe>
+        @Html.TextBoxFor(X => X.Raza, new{ @class="form-control", @required="required" })
+    </div>
+
+    <div class="form-group col-3">
+        <labe>Age</labe>
+        @Html.TextBoxFor(X => X.Edad, new{ @class="form-control", @required="required" })
+    </div>
+
+    <div class="form-group col-3">
+        <labe>Own Name</labe>
+        @Html.TextBoxFor(X => X.NameOwn, new{ @class="form-control", @required="required" })
+    </div>
+
+    <div>
+        <input type="submit" value="Save" class="btn btn-primary mt-3" />
+        <a href="@Url.Action("Index", "Pets")" class="btn btn-danger mt-3">Return</a>
+    </div>
+     
+</form>

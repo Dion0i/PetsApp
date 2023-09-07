@@ -1,0 +1,39 @@
+﻿@model List<Pets.Models.Pet>
+
+<h2>
+    <a href="@Url.Action("NewDate", "Pets")" class="btn btn-success" style="float:right">New</a>
+    Pet List
+</h2>
+<hr />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Raza</th>
+            <th>Age</th>
+            <th>Own Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+   
+
+    <tbody>
+       @foreach (var pet in Model)
+        {
+            <tr>
+                <td>@pet.ID</td>
+                <td>@pet.Names</td>
+                <td>@pet.Raza</td>
+                <td>@pet.Edad</td>
+                <td>@pet.NameOwn</td>
+                <td>
+                    <a href="@Url.Action("Update", "Pets", new{Id = pet.ID})" class="btn btn-primary">Update</a>
+                    <a href="@Url.Action("Delete", "Pets", new{Id = pet.ID})" class="btn btn-danger">Drop</a>
+                </td>
+            </tr>
+        }
+       
+    </tbody>
+</table>
